@@ -319,14 +319,7 @@ function renderPlantUML_cloud_map($PlantUML_Source, $mapFile) {
  * @returns title
  */
 function getPageTitle($parser) {
-    global $wgArticle;
-    global $wgTitle;
-    // Retrieving the title of a page is not that easy
-    if (empty($wgTitle)) {
-        $title = $parser->getTitle()->getFulltext();
-        return $title;
-    }
-    return $wgTitle;
+    return $parser->getTitle()->getBaseText();
 }
 
 /**
